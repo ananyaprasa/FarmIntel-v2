@@ -1,0 +1,72 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Build / packaging
+build/
+dist/
+dist-ssr/
+.output/
+.nitro/
+.tanstack/
+.lovable/
+*.egg-info/
+.eggs/
+
+# ML artifacts / checkpoints
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pb
+*.h5
+*.joblib
+*.pkl
+*.sav
+!backend/models/*.pth
+!backend/models/*.pkl
+!dataset/agri_ai_dataset/models/*.pth
+!dataset/agri_ai_dataset/models/*.pkl
+
+# Dataset images and raw data
+dataset/agri_ai_dataset/crop_recommendation/
+dataset/agri_ai_dataset/extra_classes/
+dataset/agri_ai_dataset/plant_disease/
+dataset/agri_ai_dataset/soil_classification/
+
+# Node / React / Vite
+node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+coverage/
+.vite/
+*.tsbuildinfo

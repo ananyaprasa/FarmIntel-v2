@@ -1,0 +1,33 @@
+# Frontend (not needed in backend container)
+agriculture-ai-frontend/
+frontend/
+
+# Git
+.git/
+.gitignore
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+
+# Local env & secrets
+.env
+backend/.env
+*.env.*
+!.env.example
+
+# Vercel / HF artifacts
+.vercel/
+api/
+vercel.json
+
+# Docs / stitch / notebooks
+stitch/
+*.ipynb
+docs/
+
+# Node
+node_modules/

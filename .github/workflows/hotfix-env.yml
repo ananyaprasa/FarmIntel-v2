@@ -1,0 +1,33 @@
+name: Hotfix — Update Env Vars Only
+
+on:
+  workflow_dispatch:
+
+env:
+  AZURE_CONTAINER_APP: agri-ai
+  AZURE_RESOURCE_GROUP: agri-ai-rg
+
+jobs:
+  update-env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Update Container App env vars (no redeploy)
+        run: |
+          az containerapp update \
+            -n ${{ env.AZURE_CONTAINER_APP }} \
+            -g ${{ env.AZURE_RESOURCE_GROUP }} \
+            --set-env-vars \
+              "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" \
+              "OPENAI_BASE_URL=${{ secrets.OPENAI_BASE_URL }}" \
+              "LLM_MODEL=${{ secrets.LLM_MODEL }}" \
+              "CORS_ORIGINS=*" \
+              "PORT=8080"
+          echo "Done. Waiting for revision to be healthy..."
+          sleep 30
+          az containerapp revision list -n ${{ env.AZURE_CONTAINER_APP }} -g ${{ env.AZURE_RESOURCE_GROUP }} -o table

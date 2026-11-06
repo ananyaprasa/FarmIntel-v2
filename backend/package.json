@@ -1,0 +1,8 @@
+{
+  "name": "agriculture-ai-backend",
+  "private": true,
+  "scripts": {
+    "venv:activate": "cmd /K call activate-venv.cmd",
+    "start": "..\\.venv\\Scripts\\python.exe -m uvicorn main:app --reload --host 0.0.0.0 --port 8000"
+  }
+}

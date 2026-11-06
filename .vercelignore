@@ -1,0 +1,8 @@
+agriculture-ai-frontend/node_modules
+agriculture-ai-frontend/.output
+agriculture-ai-frontend/.nitro
+agriculture-ai-frontend/.tanstack
+agriculture-ai-frontend/.wrangler
+.output
+dist
+.git
